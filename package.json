@@ -15,7 +15,8 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint --fix",
-    "deploy:prod": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
+    "deploy:prod": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod",
+    "deploy:preview":"node ./scripts/pullRequestPreview"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
