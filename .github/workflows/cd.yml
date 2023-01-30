@@ -10,7 +10,8 @@ on:
   # apontando para a branch "main"
   push:
     branches: [ "main" ]
-
+  pull_request:
+    branches: [ "main" ]
 # Definindo o que queremos executar
 jobs:
   deploy:
