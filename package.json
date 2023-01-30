@@ -1,0 +1,37 @@
+{
+  "name": "CICD-GitHubActions",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Emanuelle-Oliveira <manutrindadeoliver@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.1.6",
+    "node-fetch": "^3.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "rm -rf build && next build && next export && mv ./out ./build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "next lint --fix",
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:staging": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN",
+    "deploy:preview": "node ./scripts/pullRequestPreview",
+    "test:e2e:open": "cypress open",
+    "test:e2e": "cypress run --config-file=cypress.config.ts"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "cypress": "^12.4.1",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.3",
+    "typescript": "4.9.4"
+  }
+}
