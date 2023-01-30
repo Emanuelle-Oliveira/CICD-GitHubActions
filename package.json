@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "next": "^13.1.6",
+    "node-fetch": "^3.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -17,8 +18,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "deploy:prod": "yarn deploy:staging --prod",
-    "deploy:staging": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
-    "deploy:preview":"node ./scripts/pullRequestPreview"
+    "deploy:staging": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN",
+    "deploy:preview": "node ./scripts/pullRequestPreview"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
