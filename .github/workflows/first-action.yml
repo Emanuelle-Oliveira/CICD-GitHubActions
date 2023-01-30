@@ -1,0 +1,20 @@
+name: "CI (Integração Contínua): Primeira Action"
+
+on:
+  # Dispara esse workflow para cada push ou pull que acontecer
+  # apontando para a branch "main"
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# Definindo o que queremos executar
+jobs:
+  exemplo: # Job chamado exemplo
+    runs-on: ubuntu-latest # Máquina que irá rodas
+    steps: # Sequência de tarefas a serem executadas
+      - uses: actions/checkout@v3
+
+      # Roda um único comando
+      - name: Run a one-line script
+        run: echo Hello, world!
