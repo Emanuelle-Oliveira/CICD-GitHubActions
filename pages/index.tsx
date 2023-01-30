@@ -1,7 +1,7 @@
 export default function HomeScreen() {
-  return(
+  return (
     <div>
       <h1>Página Inicial</h1>
     </div>
-  )
+  );
 }
