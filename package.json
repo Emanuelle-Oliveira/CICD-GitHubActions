@@ -19,7 +19,7 @@
     "lint": "next lint --fix",
     "deploy:prod": "yarn deploy:staging --prod",
     "deploy:staging": "yarn build && vercel ./build --yes --token=$VERCEL_TOKEN",
-    "deploy:preview": "node ./scripts/pullRequestPreview",
+    "deploy:preview": "node ./scripts/pullRequestPrevie",
     "test:e2e:open": "cypress open",
     "test:e2e": "cypress run --config-file=cypress.config.ts"
   },
