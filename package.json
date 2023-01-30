@@ -1,5 +1,6 @@
 {
   "name": "CICD-GitHubActions",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Emanuelle-Oliveira <manutrindadeoliver@gmail.com>",
@@ -15,7 +16,8 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint --fix",
-    "deploy:prod": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod",
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:staging": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
     "deploy:preview":"node ./scripts/pullRequestPreview"
   },
   "devDependencies": {
